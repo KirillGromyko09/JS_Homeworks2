@@ -1,4 +1,4 @@
 'use strict';
-let age = prompt('How old are you?');
-let futureAge=parseInt(age) + 10;
+const age = prompt('How old are you?');
+const futureAge=parseInt(age) + 10;
 alert(futureAge);
