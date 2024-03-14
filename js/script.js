@@ -2,8 +2,6 @@
 const operation = prompt('Що ви хочете зробити? (add,sub,mult,div)');
 const operand1= +prompt('Введіть перше число');
 const operand2 = +prompt('Введіть друге число');
-// operand1 = parseFloat(operand1);
-// operand2 = parseFloat(operand2);
 
 let result
 let operationSymbol
