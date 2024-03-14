@@ -1,6 +1,6 @@
 'use strict';
 // Task 1
-let user = {}
+const user = {}
 user.name = 'John';
 user.surname= 'Smith';
 user.name= 'Pete';
