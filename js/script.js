@@ -51,7 +51,6 @@ if (firstNumber > secondNumber && firstNumber > thirdNumber) {
 }
 
 
-
 //5
 const a = +prompt('введите довжину для сторони "а" трикутника');
 const b = +prompt('введите довжину для сторони "b" трикутника');
