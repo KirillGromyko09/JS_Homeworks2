@@ -51,6 +51,7 @@ for (let i =1 ; i < arr8.length;i++){
     }
 }
 console.log(sum);
+
 // 9
 const arr9 = [1,2,3,4,5,'123123'];
 let reversedArr = [];
@@ -58,6 +59,7 @@ for (let i = arr9.length -1 ; i >= 0 ;i--){
     reversedArr.push(arr9[i]);
 }
 console.log(reversedArr);
+
 // 10
 const arr10 = [[1, 2, 3], [4, 5], [6]];
 let sum2 = 0;
