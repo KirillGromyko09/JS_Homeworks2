@@ -10,14 +10,14 @@ const user2 = {
   age: 31,
 };
 
-const getFullName = function (prefix = 'Mr') {
+function getFullName(prefix = 'Mr') {
   return `${prefix} ${this.name} ${this.lastName}`;
-};
+}
 const user1Full = getFullName.bind(user1, 'Mr.');
 console.log(user1Full());
 
-const getFullName2 = function (prefix = 'Mr') {
+function getFullName2(prefix = 'Mr') {
   return `${prefix} ${this.name} ${this.lastName}`;
-};
+}
 const userFullName2 = getFullName2.bind(user2, 'Mr.');
 console.log(userFullName2());
