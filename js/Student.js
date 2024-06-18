@@ -18,16 +18,35 @@ class Student {
     this.#lessonsCount = 25;
   }
 
-  present() {
-    this.#attendance[this.#currentLessonIndex] = true;
+  #setAttendance(bool) {
+    if (typeof bool !== 'boolean') throw new Error('bool should be a boolean value');
+    this.#attendance[this.#currentLessonIndex] = bool;
     this.#currentLessonIndex += 1;
   }
 
-  absent() {
+  present() {
+    this.#setAttendance(true);
+  }
 
+  absent() {
+    this.#setAttendance(false);
   }
 
   summary() {
+    return {
+      avgGrades: this.avgGrades,
+      avgAttendance: this.avgAttendance,
+    };
+  }
+
+  get avgGrades() {
+    let sum = 0;
+    for (let i = 0; i < this.#currentLessonIndex; i++) {
+      sum = this.#grades[i];
+    }
+  }
+
+  get avgAttendance() {
 
   }
 
@@ -67,10 +86,6 @@ class Student {
     return currentYear - this.#birthYear;
   }
 
-  get avgGrades() {
-
-  }
-
   set #lessonsCount(count) {
     if (typeof count !== 'number' || count < 1) throw new Error('Lessons count is invalid');
     this.#grades = new Array(count).fill(null);
@@ -79,6 +94,12 @@ class Student {
 }
 const s = new Student('Sergio', 'Leone', 1992);
 s.present();
+s.present();
+s.setGrade(80);
+s.absent();
+
+s.present();
+s.setGrade(100);
 s.present();
 s.setGrade(80);
 console.log(s);
