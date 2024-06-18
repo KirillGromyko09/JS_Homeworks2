@@ -34,6 +34,8 @@ class Student {
   setGrade(grade) {
     if (typeof grade !== 'number') throw new Error('Grade is invalid');
     if (grade < 0 || grade > 100) throw new Error(`Grade is invalid, cannot be ${grade}`);
+    if (!this.#attendance[this.#currentLessonIndex - 1]) throw new Error(`Student ${this.firstName} is absent`);
+    this.#grades[this.#currentLessonIndex - 1] = grade;
   }
 
   get firstName() {
@@ -77,6 +79,8 @@ class Student {
 }
 const s = new Student('Sergio', 'Leone', 1992);
 s.present();
+s.present();
+s.setGrade(80);
 console.log(s);
 
 export default Student;
