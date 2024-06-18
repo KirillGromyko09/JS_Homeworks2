@@ -9,6 +9,8 @@ class Student {
 
   #attendance = [];
 
+  #currentLessonIndex = 0;
+
   constructor(firstName, lastName, yearOfBirth, lessonsCount = 25) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -17,7 +19,8 @@ class Student {
   }
 
   present() {
-
+    this.#attendance[this.#currentLessonIndex] = true;
+    this.#currentLessonIndex += 1;
   }
 
   absent() {
@@ -26,6 +29,11 @@ class Student {
 
   summary() {
 
+  }
+
+  setGrade(grade) {
+    if (typeof grade !== 'number') throw new Error('Grade is invalid');
+    if (grade < 0 || grade > 100) throw new Error(`Grade is invalid, cannot be ${grade}`);
   }
 
   get firstName() {
@@ -68,6 +76,7 @@ class Student {
   }
 }
 const s = new Student('Sergio', 'Leone', 1992);
+s.present();
 console.log(s);
 
 export default Student;
