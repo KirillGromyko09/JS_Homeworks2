@@ -33,6 +33,13 @@ class Student {
   }
 
   summary() {
+    if (this.avgGrades > 90 && this.avgAttendance > 0.9) {
+      console.log('Молодец!');
+    } else if (this.avgGrades > 90 || this.avgAttendance > 0.9) {
+      console.log('Отлично, но можно и лучше');
+    } else {
+      console.log('Редиска');
+    }
     return {
       avgGrades: this.avgGrades,
       avgAttendance: this.avgAttendance,
@@ -42,11 +49,11 @@ class Student {
   get avgGrades() {
     let sum = 0;
     let lessonsWithGrades = 0;
-    for (let i = 0; i < this.#currentLessonIndex; i += 1) {
+    for (let i = 0; i < this.#currentLessonIndex; i++) {
       if (this.#grades[i] !== null) lessonsWithGrades += 1;
-      sum = this.#grades[i];
+      sum += this.#grades[i];
     }
-    return sum / lessonsWithGrades;
+    return Number(sum / lessonsWithGrades).toFixed(2);
   }
 
   get avgAttendance() {
@@ -55,7 +62,7 @@ class Student {
       if (!this.#attendance[i]) continue;
       visitedLessons += 1;
     }
-    return visitedLessons / this.#currentLessonIndex;
+    return Number(visitedLessons / this.#currentLessonIndex).toFixed(2);
   }
 
   setGrade(grade) {
@@ -100,22 +107,5 @@ class Student {
     this.#attendance = new Array(count).fill(null);
   }
 }
-const s = new Student('Sergio', 'Leone', 1992);
-s.present();
-
-s.present();
-s.setGrade(80);
-
-s.present();
-s.setGrade(100);
-
-s.present();
-s.setGrade(100);
-
-console.log(s.avgAttendance);
-console.log(s.avgGrades);
-console.log(s.summary());
-
-console.log(s);
 
 export default Student;
