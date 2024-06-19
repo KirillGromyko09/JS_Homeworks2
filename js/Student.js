@@ -41,13 +41,21 @@ class Student {
 
   get avgGrades() {
     let sum = 0;
-    for (let i = 0; i < this.#currentLessonIndex; i++) {
+    let lessonsWithGrades = 0;
+    for (let i = 0; i < this.#currentLessonIndex; i += 1) {
+      if (this.#grades[i] !== null) lessonsWithGrades += 1;
       sum = this.#grades[i];
     }
+    return sum / lessonsWithGrades;
   }
 
   get avgAttendance() {
-
+    let visitedLessons = 0;
+    for (let i = 0; i < this.#currentLessonIndex; i++) {
+      if (!this.#attendance[i]) continue;
+      visitedLessons += 1;
+    }
+    return visitedLessons / this.#currentLessonIndex;
   }
 
   setGrade(grade) {
@@ -94,14 +102,19 @@ class Student {
 }
 const s = new Student('Sergio', 'Leone', 1992);
 s.present();
+
 s.present();
 s.setGrade(80);
-s.absent();
 
 s.present();
 s.setGrade(100);
+
 s.present();
-s.setGrade(80);
+s.setGrade(100);
+
+console.log(s.avgAttendance);
+console.log(s.avgGrades);
+
 console.log(s);
 
 export default Student;
