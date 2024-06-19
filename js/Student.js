@@ -114,6 +114,7 @@ s.setGrade(100);
 
 console.log(s.avgAttendance);
 console.log(s.avgGrades);
+console.log(s.summary());
 
 console.log(s);
 
