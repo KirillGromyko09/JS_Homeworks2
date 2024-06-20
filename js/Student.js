@@ -15,7 +15,7 @@ class Student {
     this.firstName = firstName;
     this.lastName = lastName;
     this.birthYear = yearOfBirth;
-    this.#lessonsCount = 25;
+    this.#lessonsCount = lessonsCount;
   }
 
   #setAttendance(bool) {
