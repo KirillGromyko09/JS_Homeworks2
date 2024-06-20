@@ -1,7 +1,7 @@
 (function () {
   const TODO_ITEMS = 'todo-items';
   const form = document.querySelector('#todoForm');
-  const todoItemContainer = document.querySelector('#todoItems')
+  const todoItemContainer = document.querySelector('#todoItems');
   let currentId = 1;
 
   const getData = () => {
@@ -31,7 +31,7 @@
     });
     try {
       const savedItem = SaveTodoItem(data);
-      const todoItemHTML = createTodoItemLayout(savedItem)
+      const todoItemHTML = createTodoItemLayout(savedItem);
       todoItemContainer.prepend(todoItemHTML);
     } catch (error) {
       alert(error.message);
@@ -40,17 +40,21 @@
     }
   };
 
-  const CreateTodoItemLayout = (data) => {
-const wrapper = document.createElement('div');
-wrapper.className = 'col-4';
-wrapper.setAttribute('data-todo-id' , data.id)
-    wrapper.innerHTML{`<div class="taskWrapper">
-                        <div class="taskHeading">Title</div>
-                        <div class="taskDescription">Task body</div>
-                       </div>`
-    }
+  const createTodoItemLayout = (data) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'col-4';
+    wrapper.setAttribute('data-todo-id', data.id);
+
+
+    wrapper.innerHTML = `<div class="taskWrapper">
+                            <div class="taskHeading">#${data.id} | ${data.title}</div>
+                            <div class="taskDescription">${data.description}</div>
+                            <hr>
+                            <button class="btn btn-danger btn-sm" data-remove-btn>Remove</button>
+                        </div>`
+
     return wrapper;
-  };
+  }
 
   form.addEventListener('submit', CreateTodoItem);
 }());
