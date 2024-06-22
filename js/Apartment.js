@@ -1,15 +1,13 @@
-class Apartment{
+class Apartment {
   #residents = [];
-  get residents(){
+
+  get residents() {
     return this.#residents;
-  };
-
-
-  addResident (humanExample){
-    this.residents.push(humanExample);
   }
 
+  addResident(humanExample) {
+    this.residents.push(humanExample);
+  }
 }
-
 
 export default Apartment;

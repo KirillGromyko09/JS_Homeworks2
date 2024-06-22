@@ -22,7 +22,7 @@ apartment2.addResident(human4);
 apartment3.addResident(human5);
 apartment3.addResident(human6);
 
-const house = new House(2);
+const house = new House(3);
 house.addApartment(apartment1);
 house.addApartment(apartment2);
 house.addApartment(apartment3);
