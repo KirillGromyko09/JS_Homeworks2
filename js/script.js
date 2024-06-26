@@ -26,7 +26,7 @@
   };
 
   function multiplicationFunction(num) {
-    return num * 1;
+    return num * num;
   }
 
   const cachedMultiplicationFunction = cacheFunc(multiplicationFunction, 10);
@@ -40,11 +40,7 @@
   console.log(cachedMultiplicationFunction(7));
   console.log(cachedMultiplicationFunction(8));
   console.log(cachedMultiplicationFunction(9));
-  console.log(cachedMultiplicationFunction(10));
-  console.log(cachedMultiplicationFunction(11));
-  console.log(cachedMultiplicationFunction(12));
-  console.log(cachedMultiplicationFunction(13));
-  console.log(cachedMultiplicationFunction(14));
+
 }());
 
 
