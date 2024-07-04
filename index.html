@@ -8,6 +8,43 @@
     <title>Document</title>
 </head>
 <body>
+<main>
+    <h1 class="text-center mt-5 mb-5">TODO LIST</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <form id="todoForm">
+                    <div class="mb-3">
+                        <label class="form-label">Task title</label>
+                        <input type="text" name="title" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">Task body</label>
+                        <textarea name="description" class="form-control" placeholder="Task body" cols="30" rows="10"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Task!</button>
+                    <button type="button"  class="btn btn-danger" data-remove-all>Remove All TODOS</button>
+                </form>
+            </div>
+
+
+            <div class="col-8">
+                <div class="row" id="todoItems">
+
+                    <!--                    <div class="col-4">-->
+                    <!--                        <div class="taskWrapper">-->
+                    <!--                            <div class="taskHeading">Title</div>-->
+                    <!--                            <div class="taskDescription">Task body</div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+
+                    <div class="row" id="favoriteItems"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
 
 <script src="./js/script.js"></script>
 </body>
