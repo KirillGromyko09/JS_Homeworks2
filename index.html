@@ -6,9 +6,24 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-
+<main class="my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Post Id</span>
+                    <input data-input type="number" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+            <div class="col-5" data-post-container></div>
+            <div class="col-4 comment-section" data-comments-container></div>
+        </div>
+    </div>
+</main>
 <script src="./js/script.js"></script>
+
 </body>
 </html>
