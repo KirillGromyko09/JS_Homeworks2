@@ -1,5 +1,14 @@
 import Model from "./Model.js";
 import View from "./View.js";
 import Controller from "./Controller.js";
+import {api} from "./utils/constants.js";
+import {endPoints} from "./utils/constants.js";
 
-new Controller('[data-input]')
+const modelInstance = new Model(api, endPoints);
+const viewInstance = new View('[data-post-container]', '[data-comments-container]');
+
+
+const c = new Controller('[data-input]', '[data-load-comments]', {
+  model: modelInstance,
+  view: viewInstance,
+})
