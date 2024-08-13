@@ -1,14 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Альбомы и фотографии</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/src/css/style.css">
 </head>
 <body>
-
-<script src="./js/script.js"></script>
+<div class="container mt-5">
+    <h1 class="text-center">Albums and photos</h1>
+    <ul id="albumsList" class="list-group mt-4"></ul>
+    <div id="albumContainer" class="mt-5" style="display: none;">
+        <h2 id="albumTitle" class="text-center">Photos</h2>
+        <div id="photosList" class="row mt-4"></div>
+        <button id="backButton" class="btn btn-secondary mt-3">Back</button>
+    </div>
+</div>
+<script src="/src/js/controller.js"></script>
+<script src="/src/js/view.js"></script>
+<script src="/src/js/model.js"></script>
+<script src="/src/js/index.js"></script>
 </body>
 </html>
